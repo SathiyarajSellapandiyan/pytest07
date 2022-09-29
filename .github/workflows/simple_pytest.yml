@@ -1,0 +1,18 @@
+name: Simple Pytest workflow
+on: push
+jobs:
+    Pytest-sample:
+      name: Ubuntu Base
+      runs-on: ubuntu-latest
+      steps:
+            - name: Checking the code
+              uses: actions/checkout@v3
+              with: 
+                  python-version: '3.10'
+            - name: Installing the dependencies
+              run: |
+                    pip install pytest
+                    
+            - name:  Performing pytest
+              run: |
+                    pytest
